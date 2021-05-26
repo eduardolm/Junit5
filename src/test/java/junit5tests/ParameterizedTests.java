@@ -8,6 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * @TestInstance -> if lifecycle set PER_CLASS, methodSource doesn't need to be static. Otherwise, methodSource
+ * must be static
+ */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) // Allows methodSource not to be declared as static.
 public class ParameterizedTests {
 
