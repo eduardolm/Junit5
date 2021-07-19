@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * @TestInstance -> if lifecycle set PER_CLASS, methodSource doesn't need to be static. Otherwise, methodSource
  * must be static
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS) // Allows methodSource not to be declared as static.
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ParameterizedTests {
 
     /**
@@ -22,7 +22,6 @@ public class ParameterizedTests {
     @ParameterizedTest(name = "Run: {index} - value: {arguments}")
     @ValueSource(ints = {1, 5, 6})
     public void intValues(int theParam) {
-
         System.out.println("theParam = " + theParam);
     }
 
@@ -47,7 +46,7 @@ public class ParameterizedTests {
      * @param param2
      */
     @ParameterizedTest
-    @CsvSource(value = {"Steve, Rogers", "Captain, Marverl", "Bucky, Barnes"})
+    @CsvSource(value = {"Steve, Rogers", "Captain, Marvel", "Bucky, Barnes"})
     public void csvSource_StringString(String param1, String param2) {
 
         System.out.println("param1 = " + param1 + ", param2 = " + param2);

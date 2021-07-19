@@ -2,8 +2,9 @@ package junit5tests;
 
 import org.junit.jupiter.api.*;
 
+@TestMethodOrder(MethodOrderer.DisplayName.class) // Defines run method order
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class FirsTestClass {
+public class OrderedTestClass1 {
 
     @BeforeAll
     public void beforeAll() {
@@ -40,5 +41,11 @@ public class FirsTestClass {
     public void secondMethod() {
 
         System.out.println("This is the second test method");
+    }
+
+    @Test
+    @DisplayName("A display name")
+    public void thirdMethod() {
+        System.out.println("This is the third test method");
     }
 }
